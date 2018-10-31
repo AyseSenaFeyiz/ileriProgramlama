@@ -9,3 +9,5 @@
 [Class Work 3](https://aysesenafeyiz.github.io/ileriProgramlama/inspector.html) 
 
 [Homework 2](https://aysesenafeyiz.github.io/ileriProgramlama/HW2/Database.html) 
+
+[Class Work 5](https://aysesenafeyiz.github.io/ileriProgramlama/CW5/CW5.html) 

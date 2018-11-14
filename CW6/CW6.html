@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="Database.js"></script>
+    <title>Class Work 6</title>
+
+  <style>
+    .button {
+    color: purple;
+    font-weight: bold; 
+    width: auto;
+        }
+      </style>
+
+
+<script>
+"use strict";
+const url = "https://maeyler.github.io/JS/data/"
+const array = [], set = new Set(), map = new Map();
+
+
+function readData(file) {
+    console.log("readData "+file);
+    fetch(url+file)
+        .then(r => r.text(), console.log)
+        .then(addStudents, console.log);
+}
+function parseStudent(line) {
+    let b = line.split("\t");
+    let id = b[0], name = b[1], gpa = b[2];
+    let std = new Student(id, name, gpa);
+    let list = [];
+    for (let i=3; i<b.length; i++) 
+        list.push(b[i]);
+    std.courses = list
+    return std
+}
+function addStudents(txt) {
+    let msg = "\nData contains ";
+    msg += txt.length+" chars, ";
+    let a = txt.split("\n");
+    msg += a.length+" lines \n";
+    for (let s of a) {
+      let std = parseStudent(s);
+      array.push(std.id); set.add(std.name);
+      map.set(std.id,std);
+    }
+    msg += array.length+" students, "
+    msg += set.size+" distinct names"
+    out.innerText += msg
+}
+
+
+function searchID() {
+
+let count=0;
+let aSayisi=0;
+let mSayisi=0;
+let result="";
+let t=0;
+let tmap=0;
+let tarray=0;
+    while(count!=10000){
+
+let r=116690000+ (Math.floor(Math.random() * 1000) + 1000);
+
+r=r+"";
+    t = performance.now()
+     
+      if (map.has(r)){ 
+    
+    mSayisi=mSayisi+1;
+      
+        }
+t = performance.now() - t;
+tmap+=t;
+    
+t = performance.now()
+  
+ if (array.includes(r)){
+   aSayisi=aSayisi+1;
+   }
+    t = performance.now() - t;
+    tarray+=t;
+
+count=count+1;
+}
+
+
+result="Array Eslesen ID sayisi: "+aSayisi+"\nArray Suresi: "+ tarray+ "\nMap Eslesen ID sayisi: "+mSayisi+"\nMap Suresi: "+ tmap;
+
+
+return result;
+
+}
+
+</script>
+
+
+
+</head>
+
+<body>
+<body style="background-color:powderblue;">
+
+<h2 id="title" style="
+    color: purple;
+">Class Work 6</h2>
+
+<button class="button" , onClick='out.innerText+="\n\n"+searchID()'>Search 10.000 Student id</button>
+
+
+
+
+
+
+
+
+
+<p id=out >Result:</p>
+
+
+
+
+
+
+<script>
+    title.innerText = document.title;
+    readData("Students.txt");
+       
+    
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

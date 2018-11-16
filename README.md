@@ -9,7 +9,7 @@
 
 [Class Work 5](https://aysesenafeyiz.github.io/ileriProgramlama/CW5/CW5.html) 
 
-[Class Work 6](https://aysesenafeyiz.github.io/ileriProgramlama/CW5/CW6.html) 
+[Class Work 6](https://aysesenafeyiz.github.io/ileriProgramlama/CW6/CW6.html) 
 
 [Homework 1](https://aysesenafeyiz.github.io/ileriProgramlama/HW1)  
 

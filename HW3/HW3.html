@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<title>Tas-Kagit-Makas Oyunu</title>
+<meta charset="utf-8">
+<style>
+body{
+background: #fef0ff;
+}
+#liste img{
+border:1px #232333 solid;
+width:200; 
+height:200;
+}
+#oyun_sonuc img{
+border:1px #232333 solid;
+width:200; 
+height:200;
+ 
+}p {
+color:#3a1a74;
+font-size: 30pt;
+font-weight: bold;
+    } h {
+color:#3a1a74;
+font-size: 30pt;
+font-weight: bold;
+    } 
+
+
+ 
+</style>
+</head>
+<body>
+<h>Tas, Kagit ya da Makas resmini seciniz.</h> 
+
+<div id="liste">
+<img src="kagit.png" id="kagit_img" width="300" height="300" data-id="0">
+<img src="makas.png" id="makas_img" width="300" height="300" data-id="1">
+<img src="tas.png" id="tas_img" width="300" height="300" data-id="2">
+
+</div> 
+
+<div id="oyun_sonuc">
+<img src="soruisareti.png" id="oyuncu_secim" width="300" height="300" alt="oyuncu seçimi">
+
+<img src="secim.png" id="sonuc" width="300" height="300" alt="sonuc">
+
+
+<img src="soruisareti.png" id="pc_secim" width="300" height="300" alt="pc seçimi">
+</div>
+
+
+ 
+<script>
+
+
+
+
+const 
+  t1 = { transform: ["translateX(0)", "translateX(300px)", "translateX(0)"] },
+  t2 = { transform: ["rotate(0)", "rotate(90deg)", "rotate(0)"] },
+  t3 = { background: ["#e91e83a8", "#673ab7", "#3ab7a1", "#cddc39","#e91e83a8"]},
+  t4 = { transform: ["rotate(0)", "rotate(90deg)","rotate(180)", "rotate(270deg)",  "rotate(180)","rotate(90deg)","rotate(0)"]},
+  t5 = { fontSize: ["300%", "400%", "500%", "400%", "300%"] };
+
+
+
+
+var bool=1;
+
+
+while(bool<1000){
+var sayi1= (Math.round(Math.random()*3)+1);
+tas_img.animate(t4,7000);
+kagit_img.animate(t4,7000);
+makas_img.animate(t4,7000);
+
+if(sayi1==1){
+pc_secim.animate(t1,7000);
+oyuncu_secim.animate(t1,7000);
+
+}else if(sayi1==2){
+pc_secim.animate(t2,7000);
+oyuncu_secim.animate(t2,7000);
+
+}else if(sayi1==3){
+pc_secim.animate(t3,7000);
+oyuncu_secim.animate(t3,7000);
+
+}
+
+bool++;
+}
+
+
+function hareket(){
+pc_secim.animate(t2,7000);
+oyuncu_secim.animate(t2,7000);
+
+}
+
+var liste=["kagit.png","makas.png","tas.png"];
+var kagit=document.getElementById("kagit");
+var makas=document.getElementById("makas");
+var tas=document.getElementById("tas");
+
+var oSecim=document.getElementById("oyuncu_secim");
+var pcSecim=document.getElementById("pc_secim");
+
+ 
+ 
+kagit_img.onclick=secimYap;
+makas_img.onclick=secimYap;
+tas_img.onclick=secimYap;
+ 
+ 
+function secimYap(){
+var pc= RasgeleKagit();
+ 
+
+var secim= this.dataset.id;
+oSecim.src=liste[secim]
+if(pc==0 && secim==0)
+{
+sonuc="Ikinizde ayni secimi yaptiniz.";
+}
+else if(pc==0 && secim==1)
+{
+sonuc="Kazandin, makas kagidi keser.";
+}
+else if(pc==0 && secim==2)
+{
+sonuc="Kaybettin, kagit tasi sarar.";
+}
+else if(pc==1 && secim==0)
+{
+sonuc="Kaybettin, makas kagidi keser.";
+}
+else if(pc==1 && secim==1)
+{
+sonuc="Ikinizde ayni secimi yaptiniz.";
+}
+else if(pc==1 && secim==2)
+{
+sonuc="Kazandin, tas makasi kirar.";
+}
+else if(pc==2 && secim==0)
+{
+sonuc="Kazandin, kagit tasi sarar.";
+}
+else if(pc==2 && secim==1)
+{
+sonuc="Kaybettin, tas makasi kirar.";
+}
+else if(pc==2 && secim==2)
+{
+sonuc="Ikinizde ayni secimi yaptiniz.";
+}
+ 
+out.innerHTML=sonuc;
+out.animate(t5,7000);
+hareket();
+}
+ 
+function RasgeleKagit(){
+
+var sayi= Math.round(Math.random()*2);
+pcSecim.src=liste[sayi]; 
+ bool=0;
+return sayi;
+}
+ 
+</script>
+
+<p id=out >Sonuc:</p>
+
+</body>
+</html>

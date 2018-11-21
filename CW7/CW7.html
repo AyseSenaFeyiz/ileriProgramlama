@@ -17,11 +17,11 @@ function makeTable( ) {
     for (let j of (Object.keys(c.studentList[0]))) 
         row += "<th>"+j+"</th>";
     let text = "<tr>"+row+"</tr>";
-    for (let i = 0; i <= c.studentList.length; i++) {
-       row = "<th>"+i+1+"</th>";
+    for (let i = 0; i < c.studentList.length; i++) {
+       row = "<th>"+(i+1)+"</th>";
        for (let j of (Object.keys(c.studentList[0]))) {
           
-          row += "<td>"+(c.studentList[i])[j]+"</td>";
+          row += "<td>"+(c.studentList[i][j])+"</td>";
        }
        text += "<tr>"+row+"</tr>";
     }

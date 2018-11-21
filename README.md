@@ -10,6 +10,8 @@
 
 [Class Work 6](https://aysesenafeyiz.github.io/ileriProgramlama/CW6/CW6.html) 
 
+[Class Work 7](https://aysesenafeyiz.github.io/ileriProgramlama/CW7/CW7.html) 
+
 [Homework 1](https://aysesenafeyiz.github.io/ileriProgramlama/HW1)  
 
 [Homework 2](https://aysesenafeyiz.github.io/ileriProgramlama/HW2/Database.html) 

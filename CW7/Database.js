@@ -22,7 +22,7 @@ class Database{
 
 
 readSData() {
-var url = "https://maeyler.github.io/JS/data/Students.txt"
+var url = "https://aysesenafeyiz.github.io/ileriProgramlama/CW7/Students.txt"
         fetch(url)
         .then(res => res.text())
         .then(res => [
@@ -41,7 +41,7 @@ addStudents(txt) {
     	  
     const std = new Student (id, name, gpa);
     this.students.set(std.id, std);
-    this.studentList.add(std);
+    this.studentList.push(std);
     }
       
 	 
@@ -51,7 +51,6 @@ addStudents(txt) {
 
 
 }
-
 
 
 

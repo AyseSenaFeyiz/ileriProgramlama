@@ -9,11 +9,11 @@
   "theme_color": "cyan",
   "icons": [
     {
-      "src": "/cat.png",
+      "src": "https://raw.githubusercontent.com/AyseSenaFeyiz/ileriProgramlama/master/CW7/cat.png",
       "sizes": "192x192",
       "type": "image/png"
     }, {
-      "src": "/cat.png",
+      "src": "https://raw.githubusercontent.com/AyseSenaFeyiz/ileriProgramlama/master/CW7/cat.png",
       "sizes": "512x512",
       "type": "image/png"
     }

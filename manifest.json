@@ -2,7 +2,7 @@
   "name": "Ayse Sena Feyiz Advance Programing",
   "short_name": "ASF",
   "description": "Advance Programing Homeworks",
-  "start_url": "ileriProgramlama/index.html",
+  "start_url": "ileriProgramlama/homepage.html",
   "display": "standalone",
   "background_color": "cyan",
   "theme_color": "cyan",

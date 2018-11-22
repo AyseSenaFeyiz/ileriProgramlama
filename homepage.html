@@ -8,9 +8,14 @@
 
 </head>
 
-<script>
-"use strict";
-</script>
+ <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('https://maeyler.github.io/JS/sw.js')
+        .then((reg) => { console.log('SW Registered', reg) })
+        .catch(console.log)
+    }
+  </script>
 <h2 id=title></h2>
     
 <p><a href="https://github.com/AyseSenaFeyiz/ileriProgramlama">GitHub</a>: Advance Programing Repository </p>

@@ -4,8 +4,8 @@
   "description": "Advance Programing Homeworks",
   "start_url": "/ileriProgramlama/index.html",
   "display": "standalone",
-  "background_color": "cyan",
-  "theme_color": "cyan",
+  "background_color": "purple",
+  "theme_color": "purple",
   "icons": [
     {
       "src": "https://aysesenafeyiz.github.io/ileriProgramlama/ikon.png",

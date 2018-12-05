@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SVG and Canvas </title>
+
+  <style>
+    svg, canvas {
+        background: pink;
+        font: 10px arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Using Canvas</h2>
+<canvas id=canvas width=340 height=200></canvas>
+<p>Canvas is an image drawn by JavaScript</p>
+<pre id=sample></pre>
+
+<hr />
+
+<p>Ref: <i>Eloquent JavaScript</i>,
+<a href="http://eloquentjavascript.net/17_canvas.html" 
+   target="ExternalDocument"> Chap 17</a>
+</p>
+
+<script>
+"use strict";
+function draw() {
+    cx.beginPath(); 
+    cx.lineWidth = 4;
+    cx.fillStyle = "yellow"; cx.strokeStyle = "blue";
+    cx.arc(50, 50, 40, 0, 2*Math.PI);
+    cx.fill(); cx.stroke();
+    cx.fillStyle = "black"; 
+    cx.fillText("arc",44,55);
+
+    cx.beginPath(); cx.lineWidth = 5;
+    cx.fillStyle = "pink"; cx.strokeStyle = "red";
+    cx.rect(110, 10, 100, 80);
+    cx.fill(); cx.stroke();
+    cx.fillStyle = "black"; 
+    cx.fillText("rect",148,55);
+}
+
+function draw2() {
+cx.clearRect(0,0,340,100);
+cx.beginPath(); 
+cx.lineWidth = lw1.value;
+cx.fillStyle = c1.value;  
+cx.strokeStyle = c6.value;
+cx.arc(n1.value, n2.value, n3.value, 0, 2*Math.PI);
+cx.fill(); 
+cx.stroke();
+cx.fillStyle = c2.value; 
+cx.fillText(txtc.value,tk1.value,tk2.value);
+
+    cx.beginPath(); 
+    cx.lineWidth = lw2.value;
+    cx.fillStyle = c3.value; 
+    cx.strokeStyle = c4.value;
+    cx.rect(n4.value, n5.value, n6.value, n7.value);
+    cx.fill(); cx.stroke();
+    cx.fillStyle = c5.value; 
+    cx.fillText(txtd.value,tk3.value,tk4.value);
+
+    
+
+}
+
+    
+    const cx = canvas.getContext("2d");
+    draw();
+</script>
+
+<p><B>Daire Bilgileri:</b> </p>
+
+<p>Cember Boyut: 
+<input type=number id=n1 value="70">
+<input type=number id=n2 value="70">
+<input type=number id=n3 value="50">
+
+</p>
+
+
+
+<p>Cember Renk: 
+<input type="color" value="#ff0000" id="c1">
+</p>
+
+<p>Cember Cerceve Renk: 
+<input type="color" value="#ff0000" id="c6">
+</p>
+
+<p>LineWidth : 
+<input type=number id=lw1 value="22">
+</p>
+
+<p>Text Renk ve Konum: 
+<input type="color" value="#ff0000" id="c2">
+<input type=number id=tk1 value="55">
+<input type=number id=tk2 value="65">
+
+</p>
+
+
+<p>Text: 
+<input type=text id=txtc value="CW9">
+
+</p>
+
+
+
+<p><B>Dikdortgen Bilgileri:</B> </p>
+
+<p>Dikdortgen Boyut: 
+<input type=number id=n4 value="150">
+<input type=number id=n5 value="30">
+<input type=number id=n6 value="120">
+<input type=number id=n7 value="90">
+</p>
+
+<p>Dikdortgen Renk : 
+<input type="color" value="#ff0000" id="c3">
+</p>
+<p>LineWidth : 
+<input type=number id=lw2 value="25">
+</p>
+
+<p>Dikdortgen Cerceve Renk : 
+<input type="color" value="#ff0000" id="c4">
+</p>
+<p>Dikdortgen Text  : 
+<input type=text id=txtd value="CANCAS" >
+
+</p>
+
+<p>Text Renk ve Konum: 
+<input type="color" value="#ff0000" id="c5">
+<input type=number id=tk3 value="165">
+<input type=number id=tk4 value="70">
+
+</p>
+
+
+<p>
+<button class="button" ,  onClick='draw2()'> Yeni Canvas Gorunumu </button>
+</p>
+
+</body>
+</html>

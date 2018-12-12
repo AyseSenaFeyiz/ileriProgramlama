@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Home Work 2</title>
+    <title>Hangman</title>
+
+
 
   <style>
     .button {
@@ -11,13 +13,20 @@
     font-weight: bold; 
     width: auto;
         }
+.canvas {
+        background: pink;
+        font: 10px arial, sans-serif;
+    }
+
       </style>
 
-<script src="Database.js"> </script>
+<!-- <script src="Database.js"> </script> 
 
 <script>
 c=new Database();
 </script>
+
+-->
 
 </head>
 
@@ -26,65 +35,29 @@ c=new Database();
 
 <h2 id="title" style="
     color: purple;
-">Home Work 2</h2>
-
-<button class="button" , onClick='out.innerText+="\n\n"+c.randomStd()'>Random Ogrenci</button>
-
-<button class="button" , onClick='out.innerText+="\n\n"+c.randomCourse()'>Random Ders</button>
-
-
-<button class="button" , onClick='out.innerText+="\n\n"+c.findBest()'>Best GPA</button>
+">Hangman</h2>
 
 
 
+<p>Word Type: 
 
-<button class="button" , onClick='out.innerText=""'>Clear</button>
+<p id=out >Random result</p>
 
-
-<p>GPA: 
-<input type=number id=gpa >
-</p>
-<button class="button" , onClick='out.innerText+="\n\n"+c.findGPA(gpa.value)'> GPA'si yuksek ogrenci</button>
-<button class="button" , onClick='out.innerText+="\n\n"+c.findGPA2(gpa.value)'> GPA'si dusuk ogrenci</button>
-
-<hr>
-
-<p>Ogrenci ID: 
-<input type=number id=sID >
 </p>
 
-<button class="button" , onClick='out.innerText+="\n\n"+c.findCourses(sID.value)'> Aldigi Dersler </button>
 
-<button class="button" , onClick='out.innerText+="\n\n"+c.findSinav(sID.value)'> Sinav Programi </button>
+<p>
+<input type=text id=harf >
 
-
-<hr>
-<p>Ders Kodu: 
-<input type=text id=cID >
+<button class="button" , onClick=''> Try</button>
 </p>
 
-<button class="button" ,  onClick='out.innerText+="\n\n"+c.findStudents(cID.value)'> Ogrencileri Listele </button>
 
 
-<button class="button" , onClick='out.innerText+="\n\n"+c.findClassList(cID.value)'> Siniflari Listele </button>
-<hr>
+<div id="liste">
+<img src="hangman.png" id="adam" width="300" height="300" data-id="0">
 
-<p>Sinif Kodu: 
-<input type=text id=dID >
-</p>
-
-<button class="button" , onClick='out.innerText+="\n\n"+c.findCourseList(dID.value)'> Dersleri Listele </button>
-
-<button class="button" ,  onClick='out.innerText+="\n\n"+c.findCourseListCount(dID.value)'> Derslerin Sayisi </button>
-<hr>
-
-
-
-<p id=out >Result:</p>
-
-
-
-
+</div> 
 
 
 <script>

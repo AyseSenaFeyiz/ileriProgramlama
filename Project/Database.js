@@ -1,3 +1,23 @@
+
+//document.onreadystatechange = () => {
+     // if (document.readyState === 'complete') {
+        
+     // }
+    //};
+    var counter = -1;
+    var imagesPaths = ["kafa.png", "solKol.png", "govde.png", "sagKol.png", "solBacak.jpg", "sagBacak.jpg"];
+    var divNames = ["kafa", "solKol", "govde", "sagKol", "solBacak", "sagBacak"]
+    var images = [];
+    window.onload = function() {
+        for (var i = 0; i <= 5; i++) {
+            var img = new Image();
+            img.src = imagesPaths[i];
+            img.setAttribute("height", "75");
+            img.setAttribute("width", "75");
+            images.push(img);
+        }
+    };  
+
 class Category {
     constructor (id, text) {
         this.id= id;
@@ -19,9 +39,10 @@ class Word {
 
 class Database{
     constructor () {
-        this.categories = new Map()
-        this.words = new Map()
-        this.readData()
+        //this.categories = new Map()
+        //this.words = new Map()
+        //this.readData()
+        //this.getImages()
         
 
            }
@@ -55,8 +76,24 @@ addData(txt) {
 	 console.log("size:  "+ this.students.size)
       
 }
+    
+    getImages(){
 
+        var img = new Image();
+        img.src = 'kol.jpg';
 
+        var img = document.createElement("img");
+        document.getElementById("x").appendChild(img);
+        console.log("ekledim")
+    }
 
 
 }
+
+//burak
+
+function tryChange() {
+    counter++;
+    document.getElementById(divNames[counter]).appendChild(images[counter]);
+}
+//burak

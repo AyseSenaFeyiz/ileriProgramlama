@@ -17,16 +17,55 @@
         background: pink;
         font: 10px arial, sans-serif;
     }
+    .box{
+        width: 75px;
+        height: 75px;
+        border-color: black;
+        border-style: solid;
+        border-width: thin;
+    }
+    #daragaci {
+    background-image: url('daragaci.png');
+    background-repeat: no-repeat;
+    width: 404px;
+    height: 512px;
+    border-color: black;
+        border-style: solid;
+        border-width: thin;
+    } 
+    #kafa{
+        margin-left: 200px;
+        margin-top: 135px;
+    }
+    #solKol{
+        margin-left: 125px;
+        float: left;
+    }
+    #govde{
+        float: left;
+    }
+    #sagKol{
+        float: left;
+    }
+    #solBacak{
+        margin-left: 170px;
+        clear: left;
+        float: left;
+    }
+    #sagBacak{
+        float: left;
+    }
+    
 
       </style>
 
-<!-- <script src="Database.js"> </script> 
+  
 
-<script>
-c=new Database();
-</script>
+<!--<script type="text/javascript">
+    
+</script>-->
 
--->
+
 
 </head>
 
@@ -48,22 +87,33 @@ c=new Database();
 
 <p>
 <input type=text id=harf >
-
-<button class="button" , onClick=''> Try</button>
+<button class="button" , onclick="tryChange()">Try</button>
 </p>
 
 
 
-<div id="liste">
+<!-- <div id="liste">
 <img src="hangman.png" id="adam" width="300" height="300" data-id="0">
 
 </div> 
 
 
+
+<img src="daragaci.png" id="agac" width="300" height="300" data-id="0">
+-->
+<div id="daragaci">
+    <div id="x"></div>
+    <div class="box" id="kafa"></div>
+    <div class="box" id="solKol"></div>
+    <div class="box" id="govde"></div>
+    <div class="box" id="sagKol"></div>
+    <div class="box" id="solBacak"></div>
+    <div class="box" id="sagBacak"></div>
+</div>
+
+<script src="Database.js"/>
 <script>
     title.innerText = document.title;
-       
-    
 </script>
 
 </body>

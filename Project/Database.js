@@ -5,8 +5,8 @@
      // }
     //};
     var counter = -1;
-    var imagesPaths = ["kafa.png", "solKol.png", "govde.png", "sagKol.png", "solBacak.jpg", "sagBacak.jpg"];
-    var divNames = ["kafa", "solKol", "govde", "sagKol", "solBacak", "sagBacak"]
+    var imagesPaths = ["images/head.png", "images/leftArm.png", "images/body.png", "images/rightArm.png", "images/leftLeg.jpg", "images/rightLeg.jpg"];
+    var divNames = ["head", "leftArm", "body", "rightArm", "leftLeg", "rightLeg"]
     var images = [];
     window.onload = function() {
         for (var i = 0; i <= 5; i++) {
@@ -17,6 +17,7 @@
             images.push(img);
         }
     };  
+
 
 class Category {
     constructor (id, text) {
@@ -77,16 +78,6 @@ addData(txt) {
       
 }
     
-    getImages(){
-
-        var img = new Image();
-        img.src = 'kol.jpg';
-
-        var img = document.createElement("img");
-        document.getElementById("x").appendChild(img);
-        console.log("ekledim")
-    }
-
 
 }
 

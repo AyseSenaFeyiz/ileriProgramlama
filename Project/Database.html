@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Hangman</title>
-
+    <link rel="icon" href<link rel="icon" sizes="512x512" href="https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/hangman.png">" type="image/png" sizes="16x16">
 
 
   <style>
@@ -20,12 +20,9 @@
     .box{
         width: 75px;
         height: 75px;
-        border-color: black;
-        border-style: solid;
-        border-width: thin;
     }
-    #daragaci {
-    background-image: url('daragaci.png');
+    #hangman {
+    background-image: url('images/hangman.png');
     background-repeat: no-repeat;
     width: 404px;
     height: 512px;
@@ -33,26 +30,26 @@
         border-style: solid;
         border-width: thin;
     } 
-    #kafa{
+    #head {
         margin-left: 200px;
         margin-top: 135px;
     }
-    #solKol{
+    #leftArm {
         margin-left: 125px;
         float: left;
     }
-    #govde{
+    #body {
         float: left;
     }
-    #sagKol{
+    #rightArm {
         float: left;
     }
-    #solBacak{
+    #leftLeg {
         margin-left: 170px;
         clear: left;
         float: left;
     }
-    #sagBacak{
+    #rightLeg {
         float: left;
     }
     
@@ -101,14 +98,14 @@
 
 <img src="daragaci.png" id="agac" width="300" height="300" data-id="0">
 -->
-<div id="daragaci">
+<div id="hangman" >
     <div id="x"></div>
-    <div class="box" id="kafa"></div>
-    <div class="box" id="solKol"></div>
-    <div class="box" id="govde"></div>
-    <div class="box" id="sagKol"></div>
-    <div class="box" id="solBacak"></div>
-    <div class="box" id="sagBacak"></div>
+    <div class="box" id="head"></div>
+    <div class="box" id="leftArm"></div>
+    <div class="box" id="body"></div>
+    <div class="box" id="rightArm"></div>
+    <div class="box" id="leftLeg"></div>
+    <div class="box" id="rightLeg"></div>
 </div>
 
 <script src="Database.js"/>

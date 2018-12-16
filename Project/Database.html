@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Hangman</title>
-    <link rel="icon" href<link rel="icon" sizes="512x512" href="https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/hangman.png">" type="image/png" sizes="16x16">
+    <link rel="icon" href<link rel="icon" sizes="512x512" href="https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/hangman.png" type="image/png" sizes="16x16">
 
 
   <style>
+
     .button {
     color: purple;
     font-weight: bold; 
     width: auto;
         }
-.canvas {
-        background: pink;
-        font: 10px arial, sans-serif;
-    }
     .box{
         width: 75px;
         height: 75px;
@@ -64,6 +61,10 @@
 
 
 
+
+
+
+
 </head>
 
 <body>
@@ -76,28 +77,25 @@
 
 
 <p>Word Type: 
+<output type=text id=out1 >
+</p>
 
-<p id=out >Random result</p>
+<p>Lives: 
+<output type=text id=out2 >
+</p>
 
+<p>Already guessed:
+<output type=text id=out3 >
 </p>
 
 
 <p>
 <input type=text id=harf >
-<button class="button" , onclick="tryChange()">Try</button>
+<button class="button" , onclick="out2.innerText=tryChange()">Try</button>
 </p>
 
 
 
-<!-- <div id="liste">
-<img src="hangman.png" id="adam" width="300" height="300" data-id="0">
-
-</div> 
-
-
-
-<img src="daragaci.png" id="agac" width="300" height="300" data-id="0">
--->
 <div id="hangman" >
     <div id="x"></div>
     <div class="box" id="head"></div>
@@ -108,7 +106,12 @@
     <div class="box" id="rightLeg"></div>
 </div>
 
-<script src="Database.js"/>
+<script src="Database.js"></script>
+<script>
+c=new Database();
+</script>
+
+
 <script>
     title.innerText = document.title;
 </script>

@@ -1,9 +1,4 @@
 
-//document.onreadystatechange = () => {
-     // if (document.readyState === 'complete') {
-        
-     // }
-    //};
     var counter = -1;
     var imagesPaths = ["images/head.png", "images/leftArm.png", "images/body.png", "images/rightArm.png", "images/leftLeg.jpg", "images/rightLeg.jpg"];
     var divNames = ["head", "leftArm", "body", "rightArm", "leftLeg", "rightLeg"]
@@ -20,18 +15,17 @@
 
 
 class Category {
-    constructor (id, text) {
-        this.id= id;
-        this.text = text;   
+    constructor (text) {
+    this.text = text; 
+    this.words = new Set()  
  }
     toString () {
         return this.text+'';
     }
 }
 class Word {
-    constructor (id, text) {
-        this.id = id;
-        this.text = text;
+    constructor (text) {
+      this.text = text;
      }
    toString () {
         return this.text+'';
@@ -40,10 +34,10 @@ class Word {
 
 class Database{
     constructor () {
-        //this.categories = new Map()
-        //this.words = new Map()
-        //this.readData()
-        //this.getImages()
+        this.categories = new Set()
+       // this.words = new Set()
+        this.readData()
+        
         
 
            }
@@ -56,7 +50,7 @@ var url = "https://aysesenafeyiz.github.io/ileriProgramlama/Project/Data.txt"
         .then(res => [
             this.addData(res)
         ])
-    }
+}
 
 addData(txt) {
     let msg = txt.length+" chars, ";
@@ -65,26 +59,30 @@ addData(txt) {
 
     for (let line of a) {
         let b = line.split("\t");
-    	   let id = b[0], name = b[1], gpa = b[2];
-    	   let list = [];
-    	   for (let i=3; i<b.length; i++){ 
-       	list.push(b[i]);
-        }
-    const std = new Student (id, name, gpa, list);
-    this.students.set(std.id, std);
+    	   let c = b[0], w = b[1];
+    
+    const category= new Category(c);
+    this.categories.add(c)
+    const word= new Word (w);
+    console.log("category:  "+ c)
+    console.log("word:  "+ w)
+    (this.categories[(this.categories.indexof(c))]).words.add(word)
+    
+
     }
       
-	 console.log("size:  "+ this.students.size)
+	 
       
 }
     
 
 }
 
-//burak
+
 
 function tryChange() {
     counter++;
     document.getElementById(divNames[counter]).appendChild(images[counter]);
+
+return (5-counter);
 }
-//burak

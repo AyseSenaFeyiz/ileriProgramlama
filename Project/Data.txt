@@ -1,0 +1,14 @@
+color	black
+color	red
+color	green
+color	blue
+color	yellow
+color	orange
+color	pink
+color	brown
+color	beige
+color	gray
+color	purple
+color	violet
+color	turquoise
+color	maroon

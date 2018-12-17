@@ -12,3 +12,6 @@ color	purple
 color	violet
 color	turquoise
 color	maroon
+film	x
+film	y
+film	z

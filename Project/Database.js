@@ -17,12 +17,13 @@
 class Category {
     constructor (text) {
     this.text = text; 
-    this.words = new Set()  
+    this.words = new Array();  
  }
     toString () {
         return this.text+'';
     }
 }
+
 class Word {
     constructor (text) {
       this.text = text;
@@ -34,12 +35,8 @@ class Word {
 
 class Database{
     constructor () {
-        this.categories = new Set()
-       // this.words = new Set()
+        this.categories = new Map()
         this.readData()
-        
-        
-
            }
 
 
@@ -50,6 +47,7 @@ var url = "https://aysesenafeyiz.github.io/ileriProgramlama/Project/Data.txt"
         .then(res => [
             this.addData(res)
         ])
+        console.log(this.categories)
 }
 
 addData(txt) {
@@ -60,25 +58,68 @@ addData(txt) {
     for (let line of a) {
         let b = line.split("\t");
     	   let c = b[0], w = b[1];
-    
-    const category= new Category(c);
-    this.categories.add(c)
-    const word= new Word (w);
-    console.log("category:  "+ c)
-    console.log("word:  "+ w)
-    (this.categories[(this.categories.indexof(c))]).words.add(word)
-    
 
+    if(this.categories.has(c.toString())) {
+      this.categories.get(c.toString()).push(w.toString())
+    }else{
+      var text = c.toString();
+      const category = new Category(text);
+      category.words.push(w.toString());
+      this.categories.set(category.text, category.words);
     }
-      
-	 
-      
-}
     
 
+
+   /*if(this.categories.includes(category)){
+    
+   	for (let i=0; i<this.categories.length; i++){
+
+
+		console.log("categories[i].text: "+this.categories[i].toString());
+    if (this.categories[i].text==category.text){
+    		const word= new Word (w);
+            console.log(this.categories[i]);
+          	this.categories[i].words.push(word)
+        	  	}
+      } 
+    }else{
+       this.categories.push(c);
+	 for (let i=0; i<this.categories.length; i++){
+
+           
+		if (this.categories[i].text==category.text){
+		const word= new Word (w);
+           
+      	this.categories[i].words.push(word)
+      	}
+	 }
+ 	}   */
+    }   
+	}
+
+
+
+
+
+randomCategory() {
+const category = this.categories[Math.trunc(this.categories.length * Math.random())];
+let word='';
+
+	for (let i=0; i<this.categories.length; i++){
+           console.log("+++ "+ this.categories[i])
+		if (this.categories[i].text==category.text){
+	       word = this.categories[i].words[Math.trunc(this.categories[i].words.length * Math.random())];
+
+
+	 	}
+
+	}
+ return word;
 }
 
 
+
+}
 
 function tryChange() {
     counter++;

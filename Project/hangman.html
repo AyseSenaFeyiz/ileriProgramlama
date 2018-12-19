@@ -51,7 +51,7 @@
         float: left;
     }
     #main {
-	text-align: center;
+	margin-top: -20px;
 	}.hidden {
 	visibility:hidden;
 	}
@@ -76,6 +76,9 @@
 	color: black;
 	font-size: 18px;
 	}
+	#reference{
+	margin-top: 20px 
+	}
 
 
 
@@ -85,7 +88,13 @@
 
  <script>
 function tryChange(v) {
-    if(v!=" " && v!=""){
+    
+	
+	//adam asma
+	//counter++;
+    //document.getElementById(divNames[counter]).appendChild(images[counter]);
+    if(v!="" && v!=" "){
+
 			var alert = document.getElementById("alert");
             
 	if(v=="1"){
@@ -122,9 +131,9 @@ function tryChange(v) {
 				//girilen dogru
 			    for( let i = 0; i < c.hangman.word.length; i++ ) {
 				   
-							
+							//iterate throught the correct word after each keyPress
 							if ( key == c.hangman.word[i] ){
-								
+								//if keyPress is in the randomWord
 								document.getElementById(i).className = 'show';
 								c.hangman.correct = document.getElementsByClassName('show').length;//correct counter === number of show classes in the DOM
 								
@@ -148,20 +157,20 @@ function tryChange(v) {
 		
 		
 		if ( c.hangman.correct == c.hangman.word.length) {
-		
-		alert.textContent = "You've won, absolutely fantastic!!! Type 1 to play again!";
+		//if correct === number of show classes
+		alert.textContent = "You've won!!! Type 1 to play again!";
 																
 		}
 		
 		if ( c.hangman.lives == 0) {
-		
-		alert.innerText = "You ran out of lives :( True word is a "+c.hangman.word+ "\n - Do you want to play again? Type 1 for yes.";
+		//if correct === number of show classes
+		alert.innerText = "you have lost the game :(  True word is a "+c.hangman.word+ "\n - Do you want to play again? Type 1 for yes.";
 																
 		}
 		
-		
-		
-	}
+		document.getElementById("letter").value="";
+		}
+	
 	
 return (5-counter);
 }
@@ -214,7 +223,6 @@ return (5-counter);
 <p> </p>
 
 <div id="hangman" >
-    <div id="x"></div>
     <div class="box" id="head"></div>
     <div class="box" id="leftArm"></div>
     <div class="box" id="body"></div>
@@ -223,7 +231,11 @@ return (5-counter);
     <div class="box" id="rightLeg"></div>
 </div>
 
-
+<div id="reference">
+<li><a href="https://github.com/mmason33/HangmanJS/tree/master/assets/images">Ref for images</a> </li>
+  
+<li><a href="https://aysesenafeyiz.github.io/ileriProgramlama/HW2/Database.html">Ref jor JS</a></li>
+</div>
 
 
 <script src="Database.js"></script>

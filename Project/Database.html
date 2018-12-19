@@ -10,7 +10,8 @@
   <style>
 
     .button {
-    color: purple;
+    color: #831f1f;
+	background: #f0e9d8;
     font-weight: bold; 
     width: auto;
         }
@@ -67,7 +68,14 @@
 	text-align:center;
 	margin-right:15px;
     }
-
+    .prg {
+	 color: #831f1f;
+	 font-weight: bold
+    }
+	.text{
+	color: black;
+	font-size: 18px;
+	}
 
 
 
@@ -153,7 +161,7 @@ function tryChange(v) {
 		
 		if ( c.hangman.lives == 0) {
 		//if correct === number of show classes
-		alert.textContent = "You ran out of lives :( - Do you want to play again? Type 1 for yes.";
+		alert.innerText = "You ran out of lives :( True word is a "+c.hangman.word+ "\n - Do you want to play again? Type 1 for yes.";
 																
 		}
 		
@@ -172,30 +180,30 @@ return (5-counter);
 </head>
 
 <body>
-<body style="background-color:powderblue;">
+<body style="background-color:#b18e5b8a;">
 
 <h2 id="title" style="
-    color: purple;
+    color: #831f1f;
 ">Hangman</h2>
 
 
 
-<p>Word Type: 
-<output type=text id=wt >
+<p class="prg " >Word Type :  
+<output type=text id=wt class="text">
 </p>
 
-<p>Lives: 
-<output type=text id=l >
+<p class="prg ">Lives :    
+<output type=text id=l class="text">
 </p>
 
-<p>Already guessed:
-<output type=text id=ag >
+<p class="prg ">Already guessed :
+<output type=text id=ag class="text">
 </p>
 
-<h6 id="alert"></h6>
+<h4 id="alert"></h4>
 
 <p>
-<input type=text id=letter >
+<input type=text id=letter maxlength="1" >
 <button class="button" , onclick="l.innerText=tryChange(letter.value)" >Try</button>
 </p>
 

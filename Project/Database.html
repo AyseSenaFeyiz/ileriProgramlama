@@ -49,17 +49,121 @@
     #rightLeg {
         float: left;
     }
-    
+    #main {
+	text-align: center;
+	}.hidden {
+	visibility:hidden;
+	}
+	.show {
+	visibility:visible;
+	
+	}
+	.letter {
+	font-size: 2em;
+	width:40px;
+	height:45px;
+	display:inline-block;
+	border-bottom: 2px solid black;
+	text-align:center;
+	margin-right:15px;
+    }
+
+
+
 
       </style>
 
   
 
-<!--<script type="text/javascript">
+ <script>
+function tryChange(v) {
     
-</script>-->
+	
+	//adam asma
+	//counter++;
+    //document.getElementById(divNames[counter]).appendChild(images[counter]);
+    
 
-
+			var alert = document.getElementById("alert");
+            
+	if(v=="1"){
+	location.reload();
+		
+	}else{
+	
+	let key = v.toLowerCase();
+    let asci=key.charCodeAt(0);
+			//gecersiz karakter girimi onleme
+			if ((asci < 97 && c.hangman.lives !== 0 && c.hangman.correct !== c.hangman.word.length) || (asci > 122 && c.hangman.lives !== 0 && c.hangman.correct !== c.hangman.word.length ) ) {
+					alert.textContent = 'Not a valid key!';
+					setTimeout( function(){
+						alert.textContent = '';
+					}, 2000);
+			} else{
+			//geçerli karakter
+			if(c.hangman.guesses.has(key)==false){
+				c.hangman.guesses.set(key, "g")
+			
+				//tahmin edilenlere ekle
+				var ag = document.getElementById("ag");
+				ag.innerText+=" "+v;
+			
+				//girilen yanlis
+				if ( c.hangman.word.indexOf(key) == -1 ) {
+				//adam asma
+				counter++;
+				document.getElementById(divNames[counter]).appendChild(images[counter]);
+				//cani azalt
+			   c.hangman.lives=c.hangman.lives-1;
+			
+			   }else{
+				//girilen dogru
+			    for( let i = 0; i < c.hangman.word.length; i++ ) {
+				   
+							//iterate throught the correct word after each keyPress
+							if ( key == c.hangman.word[i] ){
+								//if keyPress is in the randomWord
+								document.getElementById(i).className = 'show';
+								c.hangman.correct = document.getElementsByClassName('show').length;//correct counter === number of show classes in the DOM
+								
+								
+							}
+			    }
+			}
+			
+			
+			}else{
+			alert.textContent = 'You already guess!';
+					setTimeout( function(){
+						alert.textContent = '';
+					}, 2000);
+			
+			
+			}
+		
+		}
+		}
+		
+		
+		if ( c.hangman.correct == c.hangman.word.length) {
+		//if correct === number of show classes
+		alert.textContent = "You've won, absolutely fantastic!!! Type 1 to play again!";
+																
+		}
+		
+		if ( c.hangman.lives == 0) {
+		//if correct === number of show classes
+		alert.textContent = "You ran out of lives :( - Do you want to play again? Type 1 for yes.";
+																
+		}
+		
+		
+		
+	
+	
+return (5-counter);
+}
+ </script>
 
 
 
@@ -77,24 +181,35 @@
 
 
 <p>Word Type: 
-<output type=text id=out1 >
+<output type=text id=wt >
 </p>
 
 <p>Lives: 
-<output type=text id=out2 >
+<output type=text id=l >
 </p>
 
 <p>Already guessed:
-<output type=text id=out3 >
+<output type=text id=ag >
 </p>
 
+<h6 id="alert"></h6>
 
 <p>
-<input type=text id=harf >
-<button class="button" , onclick="out2.innerText=tryChange()">Try</button>
+<input type=text id=letter >
+<button class="button" , onclick="l.innerText=tryChange(letter.value)" >Try</button>
 </p>
 
 
+<div id="main"> 
+
+</div>
+
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
 
 <div id="hangman" >
     <div id="x"></div>
@@ -106,14 +221,20 @@
     <div class="box" id="rightLeg"></div>
 </div>
 
+
+
+
 <script src="Database.js"></script>
 <script>
 c=new Database();
+
+
 </script>
 
 
 <script>
     title.innerText = document.title;
+	
 </script>
 
 </body>

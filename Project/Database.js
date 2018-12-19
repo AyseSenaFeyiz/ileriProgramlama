@@ -11,9 +11,15 @@
             img.setAttribute("width", "75");
             images.push(img);
         }
+		
+		
+		
+		
     };  
-
-
+    
+	//const letters= [['a', '0'], ['b', '0'], ['c', '0'], ['d', '0'], ['e', '0'], ['f', '0'], ['g', '0'], ['h', '0'], ['i', '0'], ['j', '0'], ['k', '0'], ['l', '0'], ['m', '0'], ['n', '0'], ['o', '0'], ['p', '0'], ['q', '0'], ['r', '0'], ['s', '0'], ['t', '0'], ['u', '0'], ['v', '0'], ['w', '0'], ['x', '0'], ['y', '0'], ['z', '0']];
+	
+	
 class Category {
     constructor (text) {
     this.text = text; 
@@ -36,6 +42,7 @@ class Word {
 class Database{
     constructor () {
         this.categories = new Map()
+		this.hangman=new Hangman()
         this.readData()
            }
 
@@ -68,62 +75,62 @@ addData(txt) {
       this.categories.set(category.text, category.words);
     }
     
+ 
+    }
 
+    const keys = Array.from(this.categories.keys())
+    let key = keys[Math.trunc(keys.length * Math.random())];
+    this.hangman.category=key;
+ 
+ 
+   let ct = this.categories.get(key);
+   // console.log("Random: "+ct.words);
+    let value=ct[Math.trunc(ct.length * Math.random())];
+    //console.log("word: "+word);
+	this.hangman.word=value;
 
-   /*if(this.categories.includes(category)){
-    
-   	for (let i=0; i<this.categories.length; i++){
-
-
-		console.log("categories[i].text: "+this.categories[i].toString());
-    if (this.categories[i].text==category.text){
-    		const word= new Word (w);
-            console.log(this.categories[i]);
-          	this.categories[i].words.push(word)
-        	  	}
-      } 
-    }else{
-       this.categories.push(c);
-	 for (let i=0; i<this.categories.length; i++){
-
-           
-		if (this.categories[i].text==category.text){
-		const word= new Word (w);
-           
-      	this.categories[i].words.push(word)
-      	}
-	 }
- 	}   */
-    }   
+	
+	
+	//select a random word from the wordList arrays based on choice of difficulty
+		
+			for( let i = 0; i < this.hangman.word.length; i++ ) {
+				main.innerHTML = main.innerHTML + '<div class="letter">' + '<span id=' + i + ' class="hidden">' + this.hangman.word[i] + '</span>' + '</div>';
+				console.log(this.hangman.word[i]);
+			}
+			
+			
+		    var wt = document.getElementById("wt");
+            wt.innerText=this.hangman.category
+	
+	        var l = document.getElementById("l");
+            l.innerText=6;
 	}
 
 
 
 
-
-randomCategory() {
-const category = this.categories[Math.trunc(this.categories.length * Math.random())];
-let word='';
-
-	for (let i=0; i<this.categories.length; i++){
-           console.log("+++ "+ this.categories[i])
-		if (this.categories[i].text==category.text){
-	       word = this.categories[i].words[Math.trunc(this.categories[i].words.length * Math.random())];
+}
 
 
-	 	}
+
+class Hangman {
+	constructor() {
+
+		
+		this.category=""
+		this.word=""
+		this.guesses=new Map();
+		this.lives=6;
+		this.correct=0;
+			
+		
+		
 
 	}
- return word;
 }
 
 
 
-}
 
-function tryChange() {
-    counter++;
-    document.getElementById(divNames[counter]).appendChild(images[counter]);
 
-return (5-counter);
-}
+

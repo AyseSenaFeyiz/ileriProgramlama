@@ -87,6 +87,10 @@
   
 
  <script>
+ function restart() {
+ location.reload();
+} 
+ 
 function tryChange(v) {
     
 	
@@ -97,10 +101,7 @@ function tryChange(v) {
 
 			var alert = document.getElementById("alert");
             
-	if(v=="1"){
-	location.reload();
-		
-	}else{
+
 	
 	let key = v.toLowerCase();
     let asci=key.charCodeAt(0);
@@ -153,18 +154,18 @@ function tryChange(v) {
 			}
 		
 		}
-		}
+		
 		
 		
 		if ( c.hangman.correct == c.hangman.word.length) {
 		//if correct === number of show classes
-		alert.textContent = "You've won!!! Type 1 to play again!";
+		alert.textContent = "You WIN!!!";
 																
 		}
 		
 		if ( c.hangman.lives == 0) {
 		//if correct === number of show classes
-		alert.innerText = "you have lost the game :(  True word is a "+c.hangman.word+ "\n - Do you want to play again? Type 1 for yes.";
+		alert.innerText = "Game Over :(  The word must be '"+c.hangman.word+ "'.";
 																
 		}
 		
@@ -191,7 +192,7 @@ return (5-counter);
 
 
 
-<p class="prg " >Word Type :  
+<p class="prg " >Category :  
 <output type=text id=wt class="text">
 </p>
 
@@ -199,7 +200,7 @@ return (5-counter);
 <output type=text id=l class="text">
 </p>
 
-<p class="prg ">Already guessed :
+<p class="prg ">Already Guessed :
 <output type=text id=ag class="text">
 </p>
 
@@ -208,6 +209,7 @@ return (5-counter);
 <p>
 <input type=text id=letter maxlength="1" >
 <button class="button" , onclick="l.innerText=tryChange(letter.value)" >Try</button>
+<button class="button" , onclick="restart()" >Restart</button>
 </p>
 
 

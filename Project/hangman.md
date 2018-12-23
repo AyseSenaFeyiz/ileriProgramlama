@@ -1,8 +1,7 @@
 ﻿
 # Hangman
 
-
-[](https://lh3.googleusercontent.com/3VrQIYS2Wy0InVMY6KW4lxRXyYPb1IWWyYRGPm0_KbIOxyk2UQw8BeHNI3OTVTwwUVkLmB-pgkQ5)
+![The Hangman Game](https://lh3.googleusercontent.com/3VrQIYS2Wy0InVMY6KW4lxRXyYPb1IWWyYRGPm0_KbIOxyk2UQw8BeHNI3OTVTwwUVkLmB-pgkQ5)
 
 
 

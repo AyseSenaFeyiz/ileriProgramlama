@@ -1,6 +1,6 @@
 
     var counter = -1;
-    var imagesPaths = ["images/head.png", "images/leftArm.png", "images/body.png", "images/rightArm.png", "images/leftLeg.jpg", "images/rightLeg.jpg"];
+    var imagesPaths = ["https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/head.png", "https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/leftArm.png", "https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/body.png", "https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/rightArm.png", "https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/leftLeg.jpg", "https://aysesenafeyiz.github.io/ileriProgramlama/Project/images/rightLeg.jpg"];
     var divNames = ["head", "leftArm", "body", "rightArm", "leftLeg", "rightLeg"]
     var images = [];
     window.onload = function() {

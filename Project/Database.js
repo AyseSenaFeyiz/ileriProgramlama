@@ -95,7 +95,7 @@ addData(txt) {
 		
 			for( let i = 0; i < this.hangman.word.length; i++ ) {
 				main.innerHTML = main.innerHTML + '<div class="letter">' + '<span id=' + i + ' class="hidden">' + this.hangman.word[i] + '</span>' + '</div>';
-				//console.log(this.hangman.word[i]);
+				console.log(this.hangman.word[i]);
 			}
 			
 			

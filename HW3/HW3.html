@@ -42,12 +42,12 @@ font-weight: bold;
 </div> 
 
 <div id="oyun_sonuc">
-<img src="soruisareti.png" id="oyuncu_secim" width="300" height="300" alt="oyuncu seçimi">
+<img src="soruisareti.png" id="oyuncu_secim" width="300" height="300" alt="oyuncu seÃ§imi">
 
 <img src="secim.png" id="sonuc" width="300" height="300" alt="sonuc">
 
 
-<img src="soruisareti.png" id="pc_secim" width="300" height="300" alt="pc seçimi">
+<img src="soruisareti.png" id="pc_secim" width="300" height="300" alt="pc seÃ§imi">
 </div>
 
 
@@ -123,7 +123,7 @@ var secim= this.dataset.id;
 oSecim.src=liste[secim]
 if(pc==0 && secim==0)
 {
-sonuc="Ikinizde ayni secimi yaptiniz.";
+sonuc="Ikiniz de ayni secimi yaptiniz.";
 }
 else if(pc==0 && secim==1)
 {
@@ -139,7 +139,7 @@ sonuc="Kaybettin, makas kagidi keser.";
 }
 else if(pc==1 && secim==1)
 {
-sonuc="Ikinizde ayni secimi yaptiniz.";
+sonuc="Ikiniz de ayni secimi yaptiniz.";
 }
 else if(pc==1 && secim==2)
 {
@@ -155,7 +155,7 @@ sonuc="Kaybettin, tas makasi kirar.";
 }
 else if(pc==2 && secim==2)
 {
-sonuc="Ikinizde ayni secimi yaptiniz.";
+sonuc="Ikiniz de ayni secimi yaptiniz.";
 }
  
 out.innerHTML=sonuc;
